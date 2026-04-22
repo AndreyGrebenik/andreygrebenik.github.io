@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='index.css'>
+    <script src='data/data_1.js'></script>
+    <script src='data/data_2.js'></script>
+    <script src='data/data_3.js'></script>
+    <script src='data/data_4.js'></script>
+    <script src='data/data_5.js'></script>
+    <script src='data/data_6.js'></script>
+    <script src='data/data_7.js'></script>
+    <script src='data/data_8.js'></script>
+    <script src='data/data_9.js'></script>
+    <script src='index.js'></script>
+    <title>Viz</title>
+</head>
+<body>
+    <canvas id='main_cv'></canvas>
+    <canvas id='buff_cv'></canvas>
+    <div id='state_selector'>
+        <div id='select_fl' class='selector'>Florida</div>
+        <div id='select_va' class='selector'>Virginia</div>
+    </div>
+    <div id='ablocks'>
+        <div class='ablock' id='metsel'>
+            <div>Metric Select</div>
+            <div class='metric' value='VAP'><span class="dot b_1"></span>VAP (overall)</div>
+            <div class='metric' value='partisan_lean'><span class="dot b_2"></span>Partisan Lean</div>
+            <div class='metric' value='turnout_rate'><span class="dot b_3"></span>Turnout Rate</div>
+            <div class='metric' value='all_vap'><span class="dot b_4"></span>VAP All Races</div>
+            <div class='metric' value='vap_black'><span class="dot b_5"></span>VAP Black %</div>
+            <div class='metric' value='vap_aian'><span class="dot b_6"></span>VAP Native %</div>
+            <div class='metric' value='vap_asian'><span class="dot b_7"></span>VAP Asian %</div>
+            <div class='metric' value='vap_nhpi'><span class="dot b_8"></span>VAP Hispanic %</div>
+        </div>
+        <div class='ablock' id='info_box'>
+            <div>Metric Lnfo:</div>
+            <div id='metric_desc'>
+                VAP Overall / Core Retention
+                <br>
+                On the map: Let us pretend that there is a HUGE amount of text here, like an INCOMPREHENSIBLE amount. I wonder if this text will wrap - we will see soon.
+
+            </div>
+        </div>
+        <div class='iblock'>
+            <div class='ablock'>
+                <div class='atitle'>Display Layer</div>
+                <div class='aoption'>Cong. Dist.</div>
+                <div class='aoption aselect'>Precinct.</div>
+            </div>
+            <div class='ablock'>
+                <div class='atitle'>Geometries</div>
+                <div class='aoption'>Centroids</div>
+                <div class='aoption aselect'>Polygons</div>
+                <div class='aoption'>Both</div>
+            </div>
+            <div class='ablock'>
+                <div class='atitle'>Timeline</div>
+                <div class='aoption aselect'>2020</div>
+                <div class='aoption'>2023</div>
+            </div>
+        </div>
+    </div>
+    <div id='rblocks'>
+        
+        <div class='ablock'>
+            <div class='atitle'>Display Layer</div>
+            <div class='columns'>
+                 <div class='acol'>
+                    <div class='atext'>Scale:</div>
+                    <canvas id='scale_cv' class='met_cv' width='100' height='250'></canvas>
+                </div>
+                 <div class='acol'>
+                    <div class='atext'>Metric flow:</div>
+                    <div id="flow_controls">
+                        <div class="flow_btn" data-flow="in">IN</div>
+                        <div class="flow_btn" data-flow="both">BOTH</div>
+                        <div class="flow_btn bselect" data-flow="out">OUT</div>
+                    </div>
+                    <canvas id='alluv_cv' class='met_cv' width='250' height='250'></canvas>
+                </div>
+            </div>
+        </div>
+        <div class='ablock'>
+            <div>
+                <div class='atext'>District comparison:</div>
+                <canvas id='bars_cv' class='met_cv'  width='250' height='200'></canvas>
+                <div class='atext'>Precinct distribution:</div>
+                <canvas id='boxes_cv' class='met_cv'  width='250' height='250'></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
